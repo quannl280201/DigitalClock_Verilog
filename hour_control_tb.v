@@ -1,13 +1,13 @@
 `timescale 1ns/1ns
-module second_control_tb;
+module hour_control_tb;
 	reg clk = 0;
 	reg set_ena;
 	reg up;
 	reg down;
 	wire [7:0]BCD_out;
-	wire TC_to_minute;
+	wire TC;
 	
-	second_control uut(.clk(clk), .set_ena(set_ena), .reset(1'b0), .up(up), .down(down), .BCD_out(BCD_out), .TC_to_minute(TC_to_minute));
+	hour_control uut(.clk(clk), .set_ena(set_ena), .up(up), .down(down), .BCD_out(BCD_out), .TC(TC));
 	
 	initial begin
 		set_ena = 1'b0;
